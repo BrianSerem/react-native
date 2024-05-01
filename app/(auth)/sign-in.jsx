@@ -5,6 +5,7 @@ import { images } from '../../constants'
 import FormField from '../../components/FormField'
 import CustomButton from '../../components/CustomButton'
 import { Link } from 'expo-router'
+
 const SignIn = () => {
   const [form, setForm] = useState({
     email: '',
@@ -50,7 +51,7 @@ const [isSubmitting, setIsSubmitting] = useState(false)
               href="/sign-up"
               className="text-lg font-psemibold text-secondary"
             >
-              Signup
+              Sign Up
             </Link>
           </View>
         </View>
