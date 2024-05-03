@@ -1,0 +1,29 @@
+{
+    "$createdAt": "2024-05-03T05:55:42.885+00:00",
+    "$id": "66347c5ed5bbca91e96a",
+    "$updatedAt": "2024-05-03T05:55:42.885+00:00",
+    "accessedAt": "2024-05-03T05:55:42.875+00:00",
+    "email": "brian@gmagil.com",
+    "emailVerification": false,
+    "labels": [],
+    "mfa": false,
+    "name": "Briang",
+    "passwordUpdate": "2024-05-03T05:55:42.875+00:00",
+    "phone": "",
+    "phoneVerification": false,
+    "prefs": {},
+    "registration": "2024-05-03T05:55:42.875+00:00",
+    "status": true,
+    "targets": [
+        {
+            "$createdAt": "2024-05-03T05:55:42.951+00:00",
+            "$id": "66347c5ee858113c4628",
+            "$updatedAt": "2024-05-03T05:55:42.951+00:00",
+            "identifier": "brian@gmagil.com",
+            "name": "",
+            "providerId": null,
+            "providerType": "email",
+            "userId": "66347c5ed5bbca91e96a"
+        }
+    ]
+}

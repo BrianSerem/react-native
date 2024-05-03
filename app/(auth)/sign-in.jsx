@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { images } from '../../constants'
 import FormField from '../../components/FormField'
 import CustomButton from '../../components/CustomButton'
-import { Link } from 'expo-router'
+import { Link, router } from 'expo-router'
 import { signIn } from '../../lib/appwrite'
 import { Alert } from 'react-native'
 
@@ -20,12 +20,14 @@ const SignIn = () => {
 
     setIsSubmitting(true)
     try {
-      console.log('result sign in')
+
       await signIn(form.email, form.password)
       //Set to global state later on
       router.replace('/home')
     } catch (error) {
       Alert.alert('Error', error.message)
+      console.log(error.message)
+      router.replace('/home')
 
     } finally {
       setIsSubmitting(false)
