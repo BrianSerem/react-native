@@ -4,11 +4,14 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { images } from '../../constants'
 import FormField from '../../components/FormField'
 import CustomButton from '../../components/CustomButton'
-import { Link, router } from 'expo-router'
+import { Link, Redirect, router } from 'expo-router'
 import { signIn } from '../../lib/appwrite'
 import { Alert } from 'react-native'
+import { useGlobalContext } from '../../context/GlobalProvider'
+import { getCurrentUser } from '../../lib/appwrite'
 
 const SignIn = () => {
+  const { setUser, setIsLoggedIn, isLoggedIn } = useGlobalContext();
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const [form, setForm] = useState({
@@ -22,6 +25,9 @@ const SignIn = () => {
     try {
 
       await signIn(form.email, form.password)
+      const user =await getCurrentUser()
+      setIsLoggedIn(true)
+      setUser(user)
       //Set to global state later on
       router.replace('/home')
     } catch (error) {
@@ -32,7 +38,7 @@ const SignIn = () => {
     }
   }
 
-
+  if (isLoggedIn) return (<Redirect  href='home'/>)
   return (
 
     <SafeAreaView className='bg-primary h-full'>

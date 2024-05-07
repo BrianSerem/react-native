@@ -1,11 +1,16 @@
-import { View, Text } from 'react-native'
+import { View, Text, FlatList } from 'react-native'
 import React from 'react'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const Home = () => {
   return (
-    <View>
-      <Text>Hello Hello, this is me home</Text>
-    </View>
+    <SafeAreaView>
+      <FlatList
+        data={[{ id: 1 }, { id: 2 }]}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (<Text> {item.id} </Text>)}>WD
+      </FlatList>
+    </SafeAreaView>
   )
 }
 
