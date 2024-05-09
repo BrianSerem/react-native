@@ -1,16 +1,36 @@
 {
-  "$collectionId": "663248260022f27bcb7b",
-  "$createdAt": "2024-05-07T09:19:40.601+00:00",
-  "$databaseId": "663247f3000ea703c7f4",
-  "$id": "6639f22c920f671301fc",
-  "$permissions": [
-    "read(\"user:6639f22a669efb04dea8\")",
-    "update(\"user:6639f22a669efb04dea8\")",
-    "delete(\"user:6639f22a669efb04dea8\")"
-  ],
-  "$updatedAt": "2024-05-07T09:19:40.601+00:00",
-  "account_id": "6639f22a669efb04dea8",
-  "avatar": "https://cloud.appwrite.io/v1/avatars/initials?name=Brian&project=6632381400322577a0e7",
-  "email": "brian@gmail.com",
-  "username": "Brian"
+  "expo": {
+    "name": "Aora",
+    "scheme": "aora",
+    "slug": "aora",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "package": "com.recoup.aora"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.recoup.aora"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router"
+    ]
+  }
 }

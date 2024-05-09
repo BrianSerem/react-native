@@ -8,7 +8,18 @@ const Home = () => {
       <FlatList
         data={[{ id: 1 }, { id: 2 }]}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (<Text> {item.id} </Text>)}>WD
+        renderItem={({ item }) => (<Text> {item.id} </Text>)}
+        ListHeaderComponent={() => (
+          <View>
+            <View>
+              <View>
+                <Text>
+                  Welcome
+                </Text>
+              </View>
+            </View>
+          </View>
+  )}>
       </FlatList>
     </SafeAreaView>
   )
