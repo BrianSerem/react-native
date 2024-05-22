@@ -10,11 +10,14 @@ const Home = () => {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (<Text> {item.id} </Text>)}
         ListHeaderComponent={() => (
-          <View>
-            <View>
+          <View className='my-6 px-4 space-y-6'>
+            <View className='justify-between items-start flex-row mb-6'>
               <View>
                 <Text>
-                  Welcome
+                  Welcome Back
+                </Text>
+                <Text>
+                  Brian Serem
                 </Text>
               </View>
             </View>
