@@ -1,0 +1,77 @@
+[
+    {
+        "$collectionId": "66324839003af85eccc8",
+        "$createdAt": "2024-05-22T17:26:48.419+00:00",
+        "$databaseId": "663247f3000ea703c7f4",
+        "$id": "664e2ad6002b74440bf8",
+        "$permissions": [],
+        "$updatedAt": "2024-05-22T18:57:14.744+00:00",
+        "prompt": "Create a motivating AI driven video aimed at inspiring coding enthusiasts with simple language",
+        "thumbnail": "https://cloud.appwrite.io/v1/storage/buckets/660d0e59e293896f1eaf/files/660eff632e9b02fe90e3/preview?width=2000&height=2000&gravity=top&quality=100&project=660d0e00da0472f3ad52",
+        "title": "Get inspired to code",
+        "users": {
+            "$collectionId": "663248260022f27bcb7b",
+            "$createdAt": "2024-05-22T18:56:04.659+00:00",
+            "$databaseId": "663247f3000ea703c7f4",
+            "$id": "664e3fc4a0a05d3b411e",
+            "$permissions": [Array
+            ],
+            "$updatedAt": "2024-05-22T18:56:04.659+00:00",
+            "account_id": "664e3fc25de5e6abeba2",
+            "avatar": "https://cloud.appwrite.io/v1/avatars/initials?name=beeserem&project=6632381400322577a0e7",
+            "email": "beeserem@gmail.com",
+            "username": "beeserem"
+        },
+        "video": "https://cloud.appwrite.io/v1/storage/buckets/660d0e59e293896f1eaf/files/660f004955f51e7e3212/view?project=660d0e00da0472f3ad52"
+    },
+    {
+        "$collectionId": "66324839003af85eccc8",
+        "$createdAt": "2024-05-22T17:31:34.741+00:00",
+        "$databaseId": "663247f3000ea703c7f4",
+        "$id": "664e2bf50012cc575105",
+        "$permissions": [],
+        "$updatedAt": "2024-05-22T18:57:00.020+00:00",
+        "prompt": "Picture the future of coding with AI. Show AR VR",
+        "thumbnail": "https://cloud.appwrite.io/v1/storage/buckets/660d0e59e293896f1eaf/files/660f0294e36d80abfaa9/preview?width=2000&height=2000&gravity=top&quality=100&project=660d0e00da0472f3ad52",
+        "title": "How AI Shapes Coding Future",
+        "users": {
+            "$collectionId": "663248260022f27bcb7b",
+            "$createdAt": "2024-05-22T18:56:04.659+00:00",
+            "$databaseId": "663247f3000ea703c7f4",
+            "$id": "664e3fc4a0a05d3b411e",
+            "$permissions": [Array
+            ],
+            "$updatedAt": "2024-05-22T18:56:04.659+00:00",
+            "account_id": "664e3fc25de5e6abeba2",
+            "avatar": "https://cloud.appwrite.io/v1/avatars/initials?name=beeserem&project=6632381400322577a0e7",
+            "email": "beeserem@gmail.com",
+            "username": "beeserem"
+        },
+        "video": "https://cloud.appwrite.io/v1/storage/buckets/660d0e59e293896f1eaf/files/660f032718759c0250ae/view?project=660d0e00da0472f3ad52"
+    },
+    {
+        "$collectionId": "66324839003af85eccc8",
+        "$createdAt": "2024-05-22T17:32:24.813+00:00",
+        "$databaseId": "663247f3000ea703c7f4",
+        "$id": "664e2c270003ac5a3fa4",
+        "$permissions": [],
+        "$updatedAt": "2024-05-22T18:56:43.804+00:00",
+        "prompt": "Create a heartwarming video following the travels of dalmatian dog exploring beautiful Italy",
+        "thumbnail": "https://cloud.appwrite.io/v1/storage/buckets/660d0e59e293896f1eaf/files/660f08374f22dab6ed8a/preview?width=2000&height=2000&gravity=top&quality=100&project=660d0e00da0472f3ad52",
+        "title": "Dalmatian's journey through Italy",
+        "users": {
+            "$collectionId": "663248260022f27bcb7b",
+            "$createdAt": "2024-05-22T18:56:04.659+00:00",
+            "$databaseId": "663247f3000ea703c7f4",
+            "$id": "664e3fc4a0a05d3b411e",
+            "$permissions": [Array
+            ],
+            "$updatedAt": "2024-05-22T18:56:04.659+00:00",
+            "account_id": "664e3fc25de5e6abeba2",
+            "avatar": "https://cloud.appwrite.io/v1/avatars/initials?name=beeserem&project=6632381400322577a0e7",
+            "email": "beeserem@gmail.com",
+            "username": "beeserem"
+        },
+        "video": "https://cloud.appwrite.io/v1/storage/buckets/660d0e59e293896f1eaf/files/660f093a03c20c7b2d12/view?project=660d0e00da0472f3ad52"
+    }
+]
