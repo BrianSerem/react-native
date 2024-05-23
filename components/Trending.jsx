@@ -8,19 +8,19 @@ const tempUrl = "https://media.licdn.com/dms/image/D4D12AQHCdAYNU9TRsg/article-c
 
 const zoomIn = {
     0: {
-        scale: 0.9
+        scale: 0.9,
     },
     1: {
-        scale: 1
+        scale: 1,
     }
 }
 
 const zoomOut = {
     0: {
-        scale: 1
+        scale: 1,
     },
     1: {
-        scale: 0.9
+        scale: 0.9,
     }
 }
 
@@ -30,7 +30,7 @@ const TrendingItem = ({ activeItem, item }) => {
     return (
         <Animatable.View
             className="mr-5"
-            animation={activeItem.$id === item.$id ? zoomIn : zoomOut}
+            animation={activeItem === item.$id ? zoomIn : zoomOut}
             duration={500}
         >
             {play ? (<Text className="text-white"> Playing!</Text>) : (
@@ -50,15 +50,25 @@ const TrendingItem = ({ activeItem, item }) => {
 
 const Trending = ({ posts }) => {
     const [activeItem, setActiveItem] = useState(posts[0])
+    const viewableItemsChange =({ viewableItems }) => {
+        if(viewableItems.length > 0) {
+            setActiveItem(viewableItems[0].key)
+        }
+    }
 
     return (
         <FlatList
             horizontal
             data={posts}
-            keyExtractor={(item) => item.id}
+            keyExtractor={(item) => item.$id}
             renderItem={({ item }) => (
                 <TrendingItem activeItem={activeItem} item={item} />
             )}
+            onViewableItemsChanged ={viewableItemsChange}
+            viewabilityConfig ={{
+                itemVisiblePercentThreshold: 70
+            }}
+            contentOffset={{ x: 170 }}
         />
     )
 }
