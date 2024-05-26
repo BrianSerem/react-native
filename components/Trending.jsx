@@ -1,10 +1,11 @@
 import * as Animatable from 'react-native-animatable'
 import { View, Text, FlatList, TouchableOpacity, ImageBackground, Image } from 'react-native'
 import { useState } from 'react'
-import { icons } from '../constants'
+import { icons, videos } from '../constants'
 import { Video, ResizeMode } from 'expo-av'
 
 const tempUrl = "https://media.licdn.com/dms/image/D4D12AQHCdAYNU9TRsg/article-cover_image-shrink_720_1280/0/1695983654178?e=1721865600&v=beta&t=NOyYc-XCTlM0TumSUx_KxX0JtPBAVXvlKIEwnVI8UnM"
+const vidUrl = "https://videos.pexels.com/video-files/8087321/8087321-uhd_2160_3840_25fps.mp4"
 
 
 const zoomIn = {
@@ -37,7 +38,7 @@ const TrendingItem = ({ activeItem, item }) => {
             {play ?
                 (
                     <Video
-                        source={{ uri: item.video }}
+                        source={{ uri: vidUrl}}
                         className="w-52 h-72 rounded-[33px] mt-3 bg-white/10"
                         resizeMode={ResizeMode.CONTAIN}
                         useNativeControls
