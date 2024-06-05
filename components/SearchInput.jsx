@@ -7,8 +7,7 @@ const SearchInput = ({ initialQuery }) => {
 
   const pathName = usePathname()
   const [query, setQuery] = useState(initialQuery || '')
-  console.log(query)
-
+  
   return (
       <View className="w-full h-16 px-4 bg-black-100 rounded-2xl border-2 border-black-200 focus:border-secondary flex flex-row items-center space-x-4">
         <TextInput
