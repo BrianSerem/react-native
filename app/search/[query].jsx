@@ -6,7 +6,7 @@ const Search = () => {
   const { query } = useLocalSearchParams()
   return (
     <View>
-      <Text>[query]</Text>
+      <Text classNmae='text-3xl text-white'>{ query }</Text>
     </View>
   )
 }
