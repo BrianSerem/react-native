@@ -1,12 +1,17 @@
-import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native'
+import { View, Text, TouchableOpacity, Image, ScrollView, Alert } from 'react-native'
 import { icons } from '../../constants'
 import { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import FormField from '../../components/FormField'
 import CustomButton from '../../components/CustomButton'
 import { Video, ResizeMode } from 'expo-av'
+import * as DocumentPicker from 'expo-document-picker'
+import { router } from 'expo-router'
+import { createVideo } from '../../lib/appwrite'
+import { useGlobalContext } from '../../context/GlobalProvider'
 
 const Create = () => {
+  const { user} = useGlobalContext()
 
   const [uploading, setUploading] = useState(false)
   const [form, setForm] = useState({
@@ -18,10 +23,55 @@ const Create = () => {
 
   const openPicker = async (selectType) => {
 
+    const result = await DocumentPicker.getDocumentAsync({
+      type: selectType === 'image' ?
+        ['image/png', 'image/jpg', 'image/jpeg'] :
+        ['video/mp4', 'video/gif']
+    })
+    if (!result.cancelled) {
+      if (selectType === 'image') {
+        setForm({ ...form, thumbnail: result.assets[0] })
+      }
+
+      if (selectType === 'video') {
+        setForm({ ...form, video: result.assets[0] })
+      }
+    }
   }
 
-  const submit = () => {
+  const submit = async () => {
+    if (!form.prompt || !form.thumbnail || !form.title || !form.video) {
+      return Alert.alert('Please fill in all the fields')
+    }
 
+    setUploading(true)
+
+    try {
+      await createVideo({...form, userId: user.$id})
+      Alert.alert('success', 'Post uploaded succesfully')
+      router.push('/home')
+    } catch (error) {
+      Alert.alert('Error', error.message)
+
+    } finally {
+      setForm({
+        title: "",
+        video: null,
+        thumbnail: null,
+        prompt: ''
+      })
+      setUploading(false)
+    }
+  }
+
+  const cancelUpload = () => {
+    setForm({
+      title: "",
+      video: null,
+      thumbnail: null,
+      prompt: ''
+
+    })
   }
 
   return (
@@ -46,9 +96,7 @@ const Create = () => {
               (<Video
                 source={{ uri: form.video.uri }}
                 className="w-full h-64 rounded-2xl"
-                useNativeControls
                 resizeMode={ResizeMode.COVER}
-                isLooping
               />) :
               (<View className="w-full h-40 px-4 bg-black-100 rounded-2xl justify-center items-center">
                 <View className="w-14 h-14 border border-dashed border-secondary-100 justify-center items-center">
@@ -66,7 +114,7 @@ const Create = () => {
               (<Image
                 source={{ uri: form.thumbnail.uri }}
                 className="w-full h-64 rounded-2xl"
-                resizeMode="contain"
+                resizeMode="cover"
               />)
               :
               (
@@ -89,6 +137,12 @@ const Create = () => {
           title="Submit & Publish"
           containerStyles="mt-7"
           handlePress={submit}
+          isLoading={uploading}
+        />
+        <CustomButton
+          title="Cancel Upload"
+          containerStyles="mt-7"
+          handlePress={cancelUpload}
           isLoading={uploading}
         />
       </ScrollView>
