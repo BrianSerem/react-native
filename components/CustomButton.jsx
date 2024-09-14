@@ -15,3 +15,9 @@ const CustomButton = ({ title, handlePress, containerStyles, textStyles, isLoadi
 }
 
 export default CustomButton
+
+const CustomHeader2 = ({
+  return (
+    <TouchableOpacity>
+  )
+})
